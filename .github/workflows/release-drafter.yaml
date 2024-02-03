@@ -1,15 +1,16 @@
 name: Release Drafter
 
 on:
-  push:
-    branches:
-      - main
-
+  pull_request:
+    types: [closed]
+permissions:
+  contents: read
 jobs:
   update_release_draft:
-    name: Release drafter
+    if: github.event.pull_request.merged == true
+    permissions:
+      contents: write  # for release-drafter/release-drafter to create a github release
     runs-on: ubuntu-latest
-
     steps:
       - name: Update Release Draft
         uses: release-drafter/release-drafter@v5
