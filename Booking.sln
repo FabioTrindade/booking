@@ -7,9 +7,24 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{CF9F4723-EF4
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{76ACCD69-B1BE-4337-8BEF-AB8B53FD439A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Booking.Domain", "Booking.Domain\Booking.Domain.csproj", "{7013987E-B689-4E0B-9004-749E621DADCF}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7013987E-B689-4E0B-9004-749E621DADCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7013987E-B689-4E0B-9004-749E621DADCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7013987E-B689-4E0B-9004-749E621DADCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7013987E-B689-4E0B-9004-749E621DADCF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7013987E-B689-4E0B-9004-749E621DADCF} = {CF9F4723-EF49-4EAA-B114-07E5637B0263}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7A5546E3-EE5E-40AA-86A2-8C50E7DCAD98}
