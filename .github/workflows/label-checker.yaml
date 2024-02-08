@@ -33,5 +33,5 @@ jobs:
       - name: Check conventional commits labels
         uses: danielchabr/pr-labels-checker@v3.3
         with:
-          hasSome: feature,fix,deprecated,removed,security,documentation,dependencies
+          hasSome: feat,feature,enhancement,fix,bug,bugfix,deprecated,removed,security,docs,documentation,deps,dependencies
           githubToken: ${{ secrets.GITHUB_TOKEN }}
