@@ -2,7 +2,6 @@
 using Booking.Domain.Apartments;
 using Booking.Domain.Bookings.Events;
 using Booking.Domain.Shared;
-using System.Runtime.CompilerServices;
 
 namespace Booking.Domain.Bookings;
 
@@ -91,7 +90,7 @@ public sealed class Booking : Entity
     public Result Confirm(DateTime utcNow)
     {
         if (Status != BookingStatus.Reserved)
-            return Result.Failure(BookingErrors.NotPending);
+            return Result.Failure(BookingErrors.NotReserved);
 
         Status = BookingStatus.Confirmed;
         ConfirmedOnUtc = utcNow;
