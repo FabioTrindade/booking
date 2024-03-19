@@ -2,5 +2,5 @@
 
 public interface IEmailService
 {
-    Task SendAsync(Domain.Users.Email, string subject, string body);
+    Task SendAsync(Domain.Users.Email email, string subject, string body);
 }
