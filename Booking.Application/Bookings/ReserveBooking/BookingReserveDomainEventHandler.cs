@@ -34,7 +34,5 @@ internal sealed class BookingReserveDomainEventHandler : INotificationHandler<Bo
             user.Email,
             "Booking Reserved",
             "You have 10 minutes to confirm this booking");
-
-        throw new NotImplementedException();
     }
 }
