@@ -1,12 +1,15 @@
 using Booking.Application.Abstractions.Clock;
+using Booking.Application.Abstractions.Data;
 using Booking.Application.Abstractions.Email;
 using Booking.Domain.Abstractions;
 using Booking.Domain.Apartments;
 using Booking.Domain.Bookings;
 using Booking.Domain.Users;
 using Booking.Infrastructure.Clock;
+using Booking.Infrastructure.Data;
 using Booking.Infrastructure.Email;
 using Booking.Infrastructure.Repositories;
+using Dapper;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -36,6 +39,10 @@ public static class DependencyInjection
         services.AddScoped<IBookingRepository, BookingRepository>();
 
         services.AddScoped<IUnitOfWork>(sp => sp.GetRequiredService<ApplicationDbContext>());
+
+        services.AddSingleton<ISqlConnectionFactory>(_ => new SqlConnectionFactory(connectionString));
+        
+        SqlMapper.AddTypeHandler(new DateOnlyTypeHandler());
         
         return services;
     }
